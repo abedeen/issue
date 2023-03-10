@@ -68,6 +68,726 @@ generators:
   endpointSelection: "ALL"
   safeServerUrl: null
   showResponse: true
+- type: "auth_invalid_empty_l2"
+  owner: "Default"
+  assertions:
+  - "@StatusCode == 401 OR @StatusCode == 403"
+  tags:
+  - "OWASP A2"
+  - "OWASP A5"
+  - "OWASP A6"
+  - "OWASP A7"
+  - "[PCI DSS 3.0] 6.5.8"
+  - "[PCI DSS 3.0] 6.5.10"
+  - "OTG-AUTHN-004"
+  - "FX Top 10 - API Vulnerability"
+  - "Non-Intrusive"
+  severity: "Critical"
+  database: null
+  inactive: true
+  matches: []
+  authors: null
+  abacResources: null
+  category: "InvalidAuthEmptyL2"
+  customType: "Basic"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: "DEFAULT"
+  payloads: null
+  customHeaders: null
+  auth: null
+  endpointSelection: "ALL"
+  safeServerUrl: null
+  showResponse: true
+- type: "abact7"
+  owner: "Default"
+  assertions:
+  - "Create:@StatusCode == 200 OR @StatusCode == 201"
+  - "Disallowed:@StatusCode == 401 OR @StatusCode == 403"
+  tags:
+  - "FX Top 10 - API Vulnerability"
+  - "Data_Access_Control"
+  severity: "High"
+  database: null
+  inactive: true
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: "UserB,UserC"
+    allowRoles: "UserA"
+    pathPatterns: null
+    resourceSamples: null
+    queryParams: null
+    bodyProperties: null
+  authors: ""
+  abacResources: null
+  category: "ABAC_Level7"
+  customType: "Basic"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: "ABAC"
+  payloads: null
+  customHeaders: null
+  auth: null
+  endpointSelection: "ALL"
+  safeServerUrl: null
+  showResponse: true
+- type: "hijack1"
+  owner: "Default"
+  assertions:
+  - "Create:@StatusCode == 200 OR @StatusCode == 201"
+  - "Disallowed:@StatusCode == 401 OR @StatusCode == 403"
+  tags:
+  - "FX Top 10 - API Vulnerability"
+  - "Data_Access_Control"
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: "UserB"
+    allowRoles: "UserA"
+    pathPatterns: null
+    resourceSamples: null
+    queryParams: null
+    bodyProperties: null
+  authors: ""
+  abacResources: null
+  category: "Hijack_Level1"
+  customType: "Basic"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: "ABAC"
+  payloads: null
+  customHeaders: null
+  auth: null
+  endpointSelection: "ALL"
+  safeServerUrl: null
+  showResponse: true
+- type: "Windows_Command_Injection_Filter"
+  owner: "Default"
+  assertions:
+  - "@ResponseTime < 7000 OR @StatusCode == 400"
+  tags:
+  - "OWASP A1"
+  - "OWASP A3"
+  - "[PCI DSS 3.0] 6.5.7"
+  - "[PCI DSS 3.2] 6.5.1"
+  - "OWASP - OTG-INPVAL-001"
+  - "OWASP - OTG-INPVAL-002"
+  - "OWASP OTG-INPVAL-013"
+  - "FX Top 10 - API Vulnerability"
+  - "INPUT VALIDATION"
+  - "NON-INTRUSIVE"
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "Windows_Command_Injection_Filter"
+  customType: "stored_injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: "STORED_INJECTION"
+  payloads: null
+  customHeaders: null
+  auth: null
+  endpointSelection: "ALL"
+  safeServerUrl: null
+  showResponse: true
+- type: "Windows_Command_Injection"
+  owner: "Default"
+  assertions:
+  - "@ResponseTime < 7000 OR @StatusCode == 400"
+  tags:
+  - "OWASP A1"
+  - "OWASP A3"
+  - "[PCI DSS 3.0] 6.5.7"
+  - "[PCI DSS 3.2] 6.5.1"
+  - "OWASP - OTG-INPVAL-001"
+  - "OWASP - OTG-INPVAL-002"
+  - "OWASP OTG-INPVAL-013"
+  - "FX Top 10 - API Vulnerability"
+  - "INPUT VALIDATION"
+  - "NON-INTRUSIVE"
+  severity: "Critical"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "Windows_Command_Injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: "INJECTION"
+  payloads: null
+  customHeaders: null
+  auth: null
+  endpointSelection: "ALL"
+  safeServerUrl: null
+  showResponse: true
+- type: "Linux_command_injection_filter"
+  owner: "Default"
+  assertions:
+  - "@ResponseTime < 7000 OR @StatusCode == 400"
+  tags:
+  - "OWASP A1"
+  - "OWASP A3"
+  - "[PCI DSS 3.0] 6.5.7"
+  - "[PCI DSS 3.2] 6.5.1"
+  - "OWASP - OTG-INPVAL-001"
+  - "OWASP - OTG-INPVAL-002"
+  - "OWASP OTG-INPVAL-013"
+  - "FX Top 10 - API Vulnerability"
+  - "INPUT VALIDATION"
+  - "NON-INTRUSIVE"
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "Linux_Command_Injection_Filter"
+  customType: "stored_injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: "STORED_INJECTION"
+  payloads: null
+  customHeaders: null
+  auth: null
+  endpointSelection: "ALL"
+  safeServerUrl: null
+  showResponse: true
+- type: "Linux_Command_Injection"
+  owner: "Default"
+  assertions:
+  - "@ResponseTime < 7000 OR @StatusCode == 400"
+  tags:
+  - "OWASP A3"
+  - "[PCI DSS 3.0] 6.5.7"
+  - "[PCI DSS 3.2] 6.5.1"
+  - "OWASP - OTG-INPVAL-001"
+  - "OWASP - OTG-INPVAL-002"
+  - "OWASP OTG-INPVAL-013"
+  - "FX Top 10 - API Vulnerability"
+  - "INPUT VALIDATION"
+  - "NON-INTRUSIVE"
+  - "OWASP A1"
+  severity: "Critical"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "Linux_Command_Injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: "INJECTION"
+  payloads: null
+  customHeaders: null
+  auth: null
+  endpointSelection: "ALL"
+  safeServerUrl: null
+  showResponse: true
+- type: "sql_injection2_timebound"
+  owner: "Default"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP A1"
+  - "[PCI DSS 3.0] 6.5.1"
+  - "OWASP - OTG-INPVAL-005"
+  - "FX Top 10 - API Vulnerability"
+  - "Injection"
+  severity: "Critical"
+  database:
+    name: "MySQL"
+    version: "5.7"
+  inactive: true
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "User-Create"
+    queryParams: null
+    bodyProperties: "id,name"
+  authors: ""
+  abacResources: null
+  category: "SQL_Injection2"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: "INJECTION"
+  payloads: null
+  customHeaders: null
+  auth: null
+  endpointSelection: "ALL"
+  safeServerUrl: null
+  showResponse: true
+- type: "sensitive_data_exposure"
+  owner: "Default"
+  assertions:
+  - "@Response.data.email =~ ***fx@**.com"
+  tags:
+  - "OWASP A1"
+  - "OWASP A3"
+  - "[PCI DSS 3.0] 6.5.7"
+  - "[PCI DSS 3.2] 6.5.1"
+  - "OWASP - OTG-INPVAL-001"
+  - "OWASP - OTG-INPVAL-002"
+  - "OWASP OTG-INPVAL-013"
+  - "FX Top 10 - API Vulnerability"
+  - "INPUT VALIDATION"
+  - "NON-INTRUSIVE"
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: "GET:/dashboard/document\nGET:/group\nGET:/document\nGET:/recyclebin\n\
+      GET:/usersettings\nGET:/user/generateApiToken\nGET:/document_type\nGET:/user\n\
+      GET:/userrights\nGET:/folder\nGET:/customer\nGET:/dashboard/qa\nGET:/bookmark\n\
+      GET:/qa\n"
+    resourceSamples: null
+    queryParams: null
+    bodyProperties: null
+  authors: ""
+  abacResources: null
+  category: "Sensitive_Data_Exposure"
+  customType: "Basic"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: "DEFAULT"
+  payloads: null
+  customHeaders: null
+  auth: null
+  endpointSelection: "ALL"
+  safeServerUrl: null
+  showResponse: true
+- type: "invalid_datatype"
+  owner: "Default"
+  assertions:
+  - "@StatusCode != 401"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP - OTG-BUSLOGIC-001"
+  - "Fuzz"
+  severity: "Major"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "Invalid_Data"
+  customType: "Basic"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: "DEFAULT"
+  payloads: null
+  customHeaders: null
+  auth: null
+  endpointSelection: "ALL"
+  safeServerUrl: null
+  showResponse: true
+- type: "special_chars"
+  owner: "Default"
+  assertions:
+  - "@StatusCode != 200"
+  - "@StatusCode != 401"
+  - "@StatusCode != 404"
+  - "@StatusCode != 500"
+  tags:
+  - "OWASP - OTG-BUSLOGIC-001"
+  - "Fuzz"
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "Special_Chars"
+  customType: "Basic"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: "DEFAULT"
+  payloads: null
+  customHeaders: null
+  auth: null
+  endpointSelection: "ALL"
+  safeServerUrl: null
+  showResponse: true
+- type: "null_value"
+  owner: "Default"
+  assertions:
+  - "@StatusCode != 200"
+  - "@StatusCode != 401"
+  - "@StatusCode != 404"
+  - "@StatusCode != 500"
+  tags:
+  - "OWASP - OTG-BUSLOGIC-001"
+  - "Fuzz"
+  severity: "Major"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "Null_Value"
+  customType: "Basic"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: "DEFAULT"
+  payloads: null
+  customHeaders: null
+  auth: null
+  endpointSelection: "ALL"
+  safeServerUrl: null
+  showResponse: true
+- type: "empty_value"
+  owner: "Default"
+  assertions:
+  - "@StatusCode != 200"
+  - "@StatusCode != 401"
+  - "@StatusCode != 404"
+  - "@StatusCode != 500"
+  tags:
+  - "Fuzz"
+  severity: "Major"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "Empty_Value"
+  customType: "Basic"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: "DEFAULT"
+  payloads: null
+  customHeaders: null
+  auth: null
+  endpointSelection: "ALL"
+  safeServerUrl: null
+  showResponse: true
+- type: "negative_number"
+  owner: "Default"
+  assertions:
+  - "@StatusCode != 401"
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP - OTG-BUSLOGIC-001"
+  - "Fuzz"
+  severity: "Major"
+  database: null
+  inactive: true
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "Negative_Number"
+  customType: "Basic"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: "DEFAULT"
+  payloads: null
+  customHeaders: null
+  auth: null
+  endpointSelection: "ALL"
+  safeServerUrl: null
+  showResponse: true
+- type: "customize"
+  owner: "Default"
+  assertions: []
+  tags: []
+  severity: null
+  database: null
+  inactive: true
+  matches:
+  - name: null
+    value: null
+    methods: null
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: null
+    resourceSamples: "Get:/api/v1/alerts[Accept=application/json,Content-Type=application/json]\n\
+      Post:/api/v1/accounts[Accept: application/json,Content-Type: application/json]"
+    queryParams: null
+    bodyProperties: null
+  authors: ""
+  abacResources: null
+  category: "Custom_Header"
+  customType: "Basic"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: "DEFAULT"
+  payloads: null
+  customHeaders: null
+  auth: null
+  endpointSelection: "ALL"
+  safeServerUrl: null
+  showResponse: true
+- type: "insecure_cookies"
+  owner: null
+  assertions: []
+  tags: []
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: null
+  abacResources: null
+  category: "Insecure_Cookies"
+  customType: "Basic"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: "DEFAULT"
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+  safeServerUrl: null
+  showResponse: true
+- type: "http_method_options_check"
+  owner: null
+  assertions:
+  - "@Response !=~ (?s:.*)(CONNECT)(?s:.*)"
+  - "@Response !=~ (?s:.*)(TRACE)(?s:.*)"
+  tags:
+  - "Config"
+  severity: "Medium"
+  database: null
+  inactive: true
+  matches: []
+  authors: null
+  abacResources: null
+  category: "Http_Method_Options_Check"
+  customType: "Basic"
+  useCategoryAssertion: null
+  addOptionalParams: false
+  categoryGroup: "DEFAULT"
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+  safeServerUrl: null
+  showResponse: true
+- type: "sla"
+  owner: "Default"
+  assertions:
+  - "@StatusCode == 200 AND @ResponseTime < 1000"
+  tags:
+  - "SLA"
+  severity: "Major"
+  database: null
+  inactive: false
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "SLA"
+  customType: "Basic"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: "DEFAULT"
+  payloads: null
+  customHeaders: null
+  auth: null
+  endpointSelection: "ALL"
+  safeServerUrl: null
+  showResponse: true
+- type: "no_params"
+  owner: "Default"
+  assertions:
+  - "@StatusCode == 200"
+  tags:
+  - " OWASP - OTG-CONFIG-006"
+  - "Fuzz"
+  severity: "Major"
+  database: null
+  inactive: false
+  matches: []
+  authors: ""
+  abacResources: null
+  category: "SimpleGET"
+  customType: "Basic"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: "DEFAULT"
+  payloads: null
+  customHeaders: null
+  auth: null
+  endpointSelection: "ALL"
+  safeServerUrl: null
+  showResponse: true
+- type: "ssrf_external_url"
+  owner: null
+  assertions:
+  - "@ResponseTime < 7000 OR @StatusCode == 400"
+  - "@Response !=~ (?s:.)*<(?s:.*)(APISec External SSRF)(?s:.*)>(?s:.*)"
+  tags:
+  - "OWASP-API8"
+  - "OWASP API Security Top 10"
+  - "SSRF"
+  severity: "High"
+  database: null
+  inactive: false
+  matches: []
+  authors: null
+  abacResources: null
+  category: "Ssrf_External_Url"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: false
+  categoryGroup: "INJECTION"
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+  safeServerUrl: null
+  showResponse: true
+- type: "error_disclosure"
+  owner: null
+  assertions:
+  - "@Response !=~ (?s:.*)[Error|Exception|Stack](?s:.*).\\w+:\\d+:\\d+(?s:.*)"
+  - "@Response !=~ (?s:.*)[Error|Exception|Stack](?s:.*).\\w+:\\s?line\\s?\\d+,\\\
+    s?column\\s?\\d+(?s:.*)"
+  tags:
+  - "OWASP-API7"
+  - "OWASP API Security Top 10"
+  - "Recon"
+  severity: "Critical"
+  database: null
+  inactive: false
+  matches: []
+  authors: null
+  abacResources: null
+  category: "Error_Disclosure"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: false
+  categoryGroup: "INJECTION"
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "GET_WITH_PARAMS"
+  safeServerUrl: null
+  showResponse: false
+- type: "cors_config"
+  owner: "Default"
+  assertions:
+  - "@ResponseHeaders.Access-Control-Allow-Origin != @NULL"
+  - "@ResponseHeaders.Access-Control-Allow-Origin !=~ (.*)(vulnerable)(.*)"
+  - "@ResponseHeaders.Access-Control-Allow-Origin !=~ (.*)(\\*)(.*)"
+  tags:
+  - "Misconfiguration"
+  - "OWASP-OriginHeaderScrutiny"
+  - "OWASP-API7"
+  severity: "Medium"
+  database: null
+  inactive: false
+  matches: []
+  authors: null
+  abacResources: null
+  category: "Cors_Config"
+  customType: "BasicCustomHeader"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: "DEFAULT"
+  payloads: null
+  customHeaders: "*:/**[Origin: vulnerable.{{@Host}}]"
+  auth: "Default"
+  endpointSelection: "ALL"
+  safeServerUrl: null
+  showResponse: true
+- type: "pii"
+  owner: "Default"
+  assertions:
+  - "@StatusCode != 404"
+  tags:
+  - "OWASP-API3"
+  - "[PCI DSS 3.0] 6.5.7"
+  - "[PCI DSS 3.2] 6.5.1"
+  - "OWASP OTG-INPVAL-013"
+  - "OWASP API Security Top 10"
+  - "NON-INTRUSIVE"
+  - "[2020 CWE TOP 7] CWE - 200"
+  - "[MITRE ATT&CK] T1119"
+  severity: "Medium"
+  database: null
+  inactive: false
+  matches: []
+  authors: null
+  abacResources: null
+  category: "PII"
+  customType: "Basic"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: "DEFAULT"
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "ALL"
+  safeServerUrl: null
+  showResponse: true
+- type: "tls_headers"
+  owner: "Default"
+  assertions:
+  - "@ResponseHeaders.strict-transport-security =~ (.*)(?i)(includeSubDomains)(.*)"
+  tags:
+  - "PCI-DSS"
+  - "OWASP-API7"
+  severity: "Medium"
+  database: null
+  inactive: false
+  matches: []
+  authors: null
+  abacResources: null
+  category: "TLS_Headers"
+  customType: "BasicCustomHeader"
+  useCategoryAssertion: null
+  addOptionalParams: null
+  categoryGroup: "DEFAULT"
+  payloads: null
+  customHeaders: null
+  auth: "Anonymous"
+  endpointSelection: "SINGLE_PLAYBOOK"
+  safeServerUrl: null
+  showResponse: true
+- type: "reflected_get_injection"
+  owner: null
+  assertions:
+  - "@Response !=~ (?s:.)*<(?s:.*)(injectionReflection)(?s:.*)>(?s:.*)"
+  tags:
+  - "OWASP-API7"
+  severity: "Medium"
+  database: null
+  inactive: false
+  matches: []
+  authors: null
+  abacResources: null
+  category: "Reflected_Get_Injection"
+  customType: "Injection"
+  useCategoryAssertion: null
+  addOptionalParams: false
+  categoryGroup: "INJECTION"
+  payloads: null
+  customHeaders: null
+  auth: "Default"
+  endpointSelection: "GET_NO_PARAMS"
+  safeServerUrl: null
+  showResponse: true
 - type: "auth_invalid"
   owner: "Default"
   assertions:
@@ -106,37 +826,6 @@ generators:
   customHeaders: null
   auth: null
   endpointSelection: "SINGLE_PLAYBOOK"
-  safeServerUrl: null
-  showResponse: true
-- type: "auth_invalid_empty_l2"
-  owner: "Default"
-  assertions:
-  - "@StatusCode == 401 OR @StatusCode == 403"
-  tags:
-  - "OWASP A2"
-  - "OWASP A5"
-  - "OWASP A6"
-  - "OWASP A7"
-  - "[PCI DSS 3.0] 6.5.8"
-  - "[PCI DSS 3.0] 6.5.10"
-  - "OTG-AUTHN-004"
-  - "FX Top 10 - API Vulnerability"
-  - "Non-Intrusive"
-  severity: "Critical"
-  database: null
-  inactive: true
-  matches: []
-  authors: null
-  abacResources: null
-  category: "InvalidAuthEmptyL2"
-  customType: "Basic"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: "DEFAULT"
-  payloads: null
-  customHeaders: null
-  auth: null
-  endpointSelection: "ALL"
   safeServerUrl: null
   showResponse: true
 - type: "auth_invalid_empty"
@@ -6229,118 +6918,6 @@ generators:
   endpointSelection: "ALL"
   safeServerUrl: null
   showResponse: true
-- type: "abact7"
-  owner: "Default"
-  assertions:
-  - "Create:@StatusCode == 200 OR @StatusCode == 201"
-  - "Disallowed:@StatusCode == 401 OR @StatusCode == 403"
-  tags:
-  - "FX Top 10 - API Vulnerability"
-  - "Data_Access_Control"
-  severity: "High"
-  database: null
-  inactive: true
-  matches:
-  - name: null
-    value: null
-    methods: null
-    denyRoles: "UserB,UserC"
-    allowRoles: "UserA"
-    pathPatterns: null
-    resourceSamples: null
-    queryParams: null
-    bodyProperties: null
-  authors: ""
-  abacResources: null
-  category: "ABAC_Level7"
-  customType: "Basic"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: "ABAC"
-  payloads: null
-  customHeaders: null
-  auth: null
-  endpointSelection: "ALL"
-  safeServerUrl: null
-  showResponse: true
-- type: "hijack1"
-  owner: "Default"
-  assertions:
-  - "Create:@StatusCode == 200 OR @StatusCode == 201"
-  - "Disallowed:@StatusCode == 401 OR @StatusCode == 403"
-  tags:
-  - "FX Top 10 - API Vulnerability"
-  - "Data_Access_Control"
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches:
-  - name: null
-    value: null
-    methods: null
-    denyRoles: "UserB"
-    allowRoles: "UserA"
-    pathPatterns: null
-    resourceSamples: null
-    queryParams: null
-    bodyProperties: null
-  authors: ""
-  abacResources: null
-  category: "Hijack_Level1"
-  customType: "Basic"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: "ABAC"
-  payloads: null
-  customHeaders: null
-  auth: null
-  endpointSelection: "ALL"
-  safeServerUrl: null
-  showResponse: true
-- type: "sensitive_data_exposure"
-  owner: "Default"
-  assertions:
-  - "@Response.data.email =~ ***fx@**.com"
-  tags:
-  - "OWASP A1"
-  - "OWASP A3"
-  - "[PCI DSS 3.0] 6.5.7"
-  - "[PCI DSS 3.2] 6.5.1"
-  - "OWASP - OTG-INPVAL-001"
-  - "OWASP - OTG-INPVAL-002"
-  - "OWASP OTG-INPVAL-013"
-  - "FX Top 10 - API Vulnerability"
-  - "INPUT VALIDATION"
-  - "NON-INTRUSIVE"
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches:
-  - name: null
-    value: null
-    methods: null
-    denyRoles: null
-    allowRoles: null
-    pathPatterns: "GET:/dashboard/document\nGET:/group\nGET:/document\nGET:/recyclebin\n\
-      GET:/usersettings\nGET:/user/generateApiToken\nGET:/document_type\nGET:/user\n\
-      GET:/userrights\nGET:/folder\nGET:/customer\nGET:/dashboard/qa\nGET:/bookmark\n\
-      GET:/qa\n"
-    resourceSamples: null
-    queryParams: null
-    bodyProperties: null
-  authors: ""
-  abacResources: null
-  category: "Sensitive_Data_Exposure"
-  customType: "Basic"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: "DEFAULT"
-  payloads: null
-  customHeaders: null
-  auth: null
-  endpointSelection: "ALL"
-  safeServerUrl: null
-  showResponse: true
 - type: "ADoS"
   owner: "Default"
   assertions:
@@ -6398,134 +6975,6 @@ generators:
   authors: ""
   abacResources: null
   category: "XSS_Injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: "INJECTION"
-  payloads: null
-  customHeaders: null
-  auth: null
-  endpointSelection: "ALL"
-  safeServerUrl: null
-  showResponse: true
-- type: "Windows_Command_Injection_Filter"
-  owner: "Default"
-  assertions:
-  - "@ResponseTime < 7000 OR @StatusCode == 400"
-  tags:
-  - "OWASP A1"
-  - "OWASP A3"
-  - "[PCI DSS 3.0] 6.5.7"
-  - "[PCI DSS 3.2] 6.5.1"
-  - "OWASP - OTG-INPVAL-001"
-  - "OWASP - OTG-INPVAL-002"
-  - "OWASP OTG-INPVAL-013"
-  - "FX Top 10 - API Vulnerability"
-  - "INPUT VALIDATION"
-  - "NON-INTRUSIVE"
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "Windows_Command_Injection_Filter"
-  customType: "stored_injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: "STORED_INJECTION"
-  payloads: null
-  customHeaders: null
-  auth: null
-  endpointSelection: "ALL"
-  safeServerUrl: null
-  showResponse: true
-- type: "Windows_Command_Injection"
-  owner: "Default"
-  assertions:
-  - "@ResponseTime < 7000 OR @StatusCode == 400"
-  tags:
-  - "OWASP A1"
-  - "OWASP A3"
-  - "[PCI DSS 3.0] 6.5.7"
-  - "[PCI DSS 3.2] 6.5.1"
-  - "OWASP - OTG-INPVAL-001"
-  - "OWASP - OTG-INPVAL-002"
-  - "OWASP OTG-INPVAL-013"
-  - "FX Top 10 - API Vulnerability"
-  - "INPUT VALIDATION"
-  - "NON-INTRUSIVE"
-  severity: "Critical"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "Windows_Command_Injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: "INJECTION"
-  payloads: null
-  customHeaders: null
-  auth: null
-  endpointSelection: "ALL"
-  safeServerUrl: null
-  showResponse: true
-- type: "Linux_command_injection_filter"
-  owner: "Default"
-  assertions:
-  - "@ResponseTime < 7000 OR @StatusCode == 400"
-  tags:
-  - "OWASP A1"
-  - "OWASP A3"
-  - "[PCI DSS 3.0] 6.5.7"
-  - "[PCI DSS 3.2] 6.5.1"
-  - "OWASP - OTG-INPVAL-001"
-  - "OWASP - OTG-INPVAL-002"
-  - "OWASP OTG-INPVAL-013"
-  - "FX Top 10 - API Vulnerability"
-  - "INPUT VALIDATION"
-  - "NON-INTRUSIVE"
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "Linux_Command_Injection_Filter"
-  customType: "stored_injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: "STORED_INJECTION"
-  payloads: null
-  customHeaders: null
-  auth: null
-  endpointSelection: "ALL"
-  safeServerUrl: null
-  showResponse: true
-- type: "Linux_Command_Injection"
-  owner: "Default"
-  assertions:
-  - "@ResponseTime < 7000 OR @StatusCode == 400"
-  tags:
-  - "OWASP A3"
-  - "[PCI DSS 3.0] 6.5.7"
-  - "[PCI DSS 3.2] 6.5.1"
-  - "OWASP - OTG-INPVAL-001"
-  - "OWASP - OTG-INPVAL-002"
-  - "OWASP OTG-INPVAL-013"
-  - "FX Top 10 - API Vulnerability"
-  - "INPUT VALIDATION"
-  - "NON-INTRUSIVE"
-  - "OWASP A1"
-  severity: "Critical"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "Linux_Command_Injection"
   customType: "Injection"
   useCategoryAssertion: null
   addOptionalParams: null
@@ -6608,45 +7057,6 @@ generators:
   useCategoryAssertion: null
   addOptionalParams: null
   categoryGroup: "STORED_INJECTION"
-  payloads: null
-  customHeaders: null
-  auth: null
-  endpointSelection: "ALL"
-  safeServerUrl: null
-  showResponse: true
-- type: "sql_injection2_timebound"
-  owner: "Default"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP A1"
-  - "[PCI DSS 3.0] 6.5.1"
-  - "OWASP - OTG-INPVAL-005"
-  - "FX Top 10 - API Vulnerability"
-  - "Injection"
-  severity: "Critical"
-  database:
-    name: "MySQL"
-    version: "5.7"
-  inactive: true
-  matches:
-  - name: null
-    value: null
-    methods: null
-    denyRoles: null
-    allowRoles: null
-    pathPatterns: null
-    resourceSamples: "User-Create"
-    queryParams: null
-    bodyProperties: "id,name"
-  authors: ""
-  abacResources: null
-  category: "SQL_Injection2"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: "INJECTION"
   payloads: null
   customHeaders: null
   auth: null
@@ -6755,392 +7165,6 @@ generators:
   endpointSelection: "ALL"
   safeServerUrl: null
   showResponse: true
-- type: "sla"
-  owner: "Default"
-  assertions:
-  - "@StatusCode == 200 AND @ResponseTime < 1000"
-  tags:
-  - "SLA"
-  severity: "Major"
-  database: null
-  inactive: false
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "SLA"
-  customType: "Basic"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: "DEFAULT"
-  payloads: null
-  customHeaders: null
-  auth: null
-  endpointSelection: "ALL"
-  safeServerUrl: null
-  showResponse: true
-- type: "invalid_datatype"
-  owner: "Default"
-  assertions:
-  - "@StatusCode != 401"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP - OTG-BUSLOGIC-001"
-  - "Fuzz"
-  severity: "Major"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "Invalid_Data"
-  customType: "Basic"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: "DEFAULT"
-  payloads: null
-  customHeaders: null
-  auth: null
-  endpointSelection: "ALL"
-  safeServerUrl: null
-  showResponse: true
-- type: "no_params"
-  owner: "Default"
-  assertions:
-  - "@StatusCode == 200"
-  tags:
-  - " OWASP - OTG-CONFIG-006"
-  - "Fuzz"
-  severity: "Major"
-  database: null
-  inactive: false
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "SimpleGET"
-  customType: "Basic"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: "DEFAULT"
-  payloads: null
-  customHeaders: null
-  auth: null
-  endpointSelection: "ALL"
-  safeServerUrl: null
-  showResponse: true
-- type: "special_chars"
-  owner: "Default"
-  assertions:
-  - "@StatusCode != 200"
-  - "@StatusCode != 401"
-  - "@StatusCode != 404"
-  - "@StatusCode != 500"
-  tags:
-  - "OWASP - OTG-BUSLOGIC-001"
-  - "Fuzz"
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "Special_Chars"
-  customType: "Basic"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: "DEFAULT"
-  payloads: null
-  customHeaders: null
-  auth: null
-  endpointSelection: "ALL"
-  safeServerUrl: null
-  showResponse: true
-- type: "null_value"
-  owner: "Default"
-  assertions:
-  - "@StatusCode != 200"
-  - "@StatusCode != 401"
-  - "@StatusCode != 404"
-  - "@StatusCode != 500"
-  tags:
-  - "OWASP - OTG-BUSLOGIC-001"
-  - "Fuzz"
-  severity: "Major"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "Null_Value"
-  customType: "Basic"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: "DEFAULT"
-  payloads: null
-  customHeaders: null
-  auth: null
-  endpointSelection: "ALL"
-  safeServerUrl: null
-  showResponse: true
-- type: "empty_value"
-  owner: "Default"
-  assertions:
-  - "@StatusCode != 200"
-  - "@StatusCode != 401"
-  - "@StatusCode != 404"
-  - "@StatusCode != 500"
-  tags:
-  - "Fuzz"
-  severity: "Major"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "Empty_Value"
-  customType: "Basic"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: "DEFAULT"
-  payloads: null
-  customHeaders: null
-  auth: null
-  endpointSelection: "ALL"
-  safeServerUrl: null
-  showResponse: true
-- type: "negative_number"
-  owner: "Default"
-  assertions:
-  - "@StatusCode != 401"
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP - OTG-BUSLOGIC-001"
-  - "Fuzz"
-  severity: "Major"
-  database: null
-  inactive: true
-  matches: []
-  authors: ""
-  abacResources: null
-  category: "Negative_Number"
-  customType: "Basic"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: "DEFAULT"
-  payloads: null
-  customHeaders: null
-  auth: null
-  endpointSelection: "ALL"
-  safeServerUrl: null
-  showResponse: true
-- type: "customize"
-  owner: "Default"
-  assertions: []
-  tags: []
-  severity: null
-  database: null
-  inactive: true
-  matches:
-  - name: null
-    value: null
-    methods: null
-    denyRoles: null
-    allowRoles: null
-    pathPatterns: null
-    resourceSamples: "Get:/api/v1/alerts[Accept=application/json,Content-Type=application/json]\n\
-      Post:/api/v1/accounts[Accept: application/json,Content-Type: application/json]"
-    queryParams: null
-    bodyProperties: null
-  authors: ""
-  abacResources: null
-  category: "Custom_Header"
-  customType: "Basic"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: "DEFAULT"
-  payloads: null
-  customHeaders: null
-  auth: null
-  endpointSelection: "ALL"
-  safeServerUrl: null
-  showResponse: true
-- type: "ssrf_external_url"
-  owner: null
-  assertions:
-  - "@ResponseTime < 7000 OR @StatusCode == 400"
-  - "@Response !=~ (?s:.)*<(?s:.*)(APISec External SSRF)(?s:.*)>(?s:.*)"
-  tags:
-  - "OWASP-API8"
-  - "OWASP API Security Top 10"
-  - "SSRF"
-  severity: "High"
-  database: null
-  inactive: false
-  matches: []
-  authors: null
-  abacResources: null
-  category: "Ssrf_External_Url"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: false
-  categoryGroup: "INJECTION"
-  payloads: null
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
-  safeServerUrl: null
-  showResponse: true
-- type: "error_disclosure"
-  owner: null
-  assertions:
-  - "@Response !=~ (?s:.*)[Error|Exception|Stack](?s:.*).\\w+:\\d+:\\d+(?s:.*)"
-  - "@Response !=~ (?s:.*)[Error|Exception|Stack](?s:.*).\\w+:\\s?line\\s?\\d+,\\\
-    s?column\\s?\\d+(?s:.*)"
-  tags:
-  - "OWASP-API7"
-  - "OWASP API Security Top 10"
-  - "Recon"
-  severity: "Critical"
-  database: null
-  inactive: false
-  matches: []
-  authors: null
-  abacResources: null
-  category: "Error_Disclosure"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: false
-  categoryGroup: "INJECTION"
-  payloads: null
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "GET_WITH_PARAMS"
-  safeServerUrl: null
-  showResponse: false
-- type: "cors_config"
-  owner: "Default"
-  assertions:
-  - "@ResponseHeaders.Access-Control-Allow-Origin != @NULL"
-  - "@ResponseHeaders.Access-Control-Allow-Origin !=~ (.*)(vulnerable)(.*)"
-  - "@ResponseHeaders.Access-Control-Allow-Origin !=~ (.*)(\\*)(.*)"
-  tags:
-  - "Misconfiguration"
-  - "OWASP-OriginHeaderScrutiny"
-  - "OWASP-API7"
-  severity: "Medium"
-  database: null
-  inactive: false
-  matches: []
-  authors: null
-  abacResources: null
-  category: "Cors_Config"
-  customType: "BasicCustomHeader"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: "DEFAULT"
-  payloads: null
-  customHeaders: "*:/**[Origin: vulnerable.{{@Host}}]"
-  auth: "Default"
-  endpointSelection: "ALL"
-  safeServerUrl: null
-  showResponse: true
-- type: "pii"
-  owner: "Default"
-  assertions:
-  - "@StatusCode != 404"
-  tags:
-  - "OWASP-API3"
-  - "[PCI DSS 3.0] 6.5.7"
-  - "[PCI DSS 3.2] 6.5.1"
-  - "OWASP OTG-INPVAL-013"
-  - "OWASP API Security Top 10"
-  - "NON-INTRUSIVE"
-  - "[2020 CWE TOP 7] CWE - 200"
-  - "[MITRE ATT&CK] T1119"
-  severity: "Medium"
-  database: null
-  inactive: false
-  matches: []
-  authors: null
-  abacResources: null
-  category: "PII"
-  customType: "Basic"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: "DEFAULT"
-  payloads: null
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
-  safeServerUrl: null
-  showResponse: true
-- type: "insecure_cookies"
-  owner: null
-  assertions: []
-  tags: []
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: null
-  abacResources: null
-  category: "Insecure_Cookies"
-  customType: "Basic"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: "DEFAULT"
-  payloads: null
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
-  safeServerUrl: null
-  showResponse: true
-- type: "tls_headers"
-  owner: "Default"
-  assertions:
-  - "@ResponseHeaders.strict-transport-security =~ (.*)(?i)(includeSubDomains)(.*)"
-  tags:
-  - "PCI-DSS"
-  - "OWASP-API7"
-  severity: "Medium"
-  database: null
-  inactive: false
-  matches: []
-  authors: null
-  abacResources: null
-  category: "TLS_Headers"
-  customType: "BasicCustomHeader"
-  useCategoryAssertion: null
-  addOptionalParams: null
-  categoryGroup: "DEFAULT"
-  payloads: null
-  customHeaders: null
-  auth: "Anonymous"
-  endpointSelection: "SINGLE_PLAYBOOK"
-  safeServerUrl: null
-  showResponse: true
-- type: "reflected_get_injection"
-  owner: null
-  assertions:
-  - "@Response !=~ (?s:.)*<(?s:.*)(injectionReflection)(?s:.*)>(?s:.*)"
-  tags:
-  - "OWASP-API7"
-  severity: "Medium"
-  database: null
-  inactive: false
-  matches: []
-  authors: null
-  abacResources: null
-  category: "Reflected_Get_Injection"
-  customType: "Injection"
-  useCategoryAssertion: null
-  addOptionalParams: false
-  categoryGroup: "INJECTION"
-  payloads: null
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "GET_NO_PARAMS"
-  safeServerUrl: null
-  showResponse: true
 - type: "reflected_post_injection"
   owner: null
   assertions:
@@ -7212,30 +7236,6 @@ generators:
   customHeaders: null
   auth: "Default"
   endpointSelection: "SINGLE_PLAYBOOK"
-  safeServerUrl: null
-  showResponse: true
-- type: "http_method_options_check"
-  owner: null
-  assertions:
-  - "@Response !=~ (?s:.*)(CONNECT)(?s:.*)"
-  - "@Response !=~ (?s:.*)(TRACE)(?s:.*)"
-  tags:
-  - "Config"
-  severity: "Medium"
-  database: null
-  inactive: true
-  matches: []
-  authors: null
-  abacResources: null
-  category: "Http_Method_Options_Check"
-  customType: "Basic"
-  useCategoryAssertion: null
-  addOptionalParams: false
-  categoryGroup: "DEFAULT"
-  payloads: null
-  customHeaders: null
-  auth: "Default"
-  endpointSelection: "ALL"
   safeServerUrl: null
   showResponse: true
 globalSkipPaths: null
